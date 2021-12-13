@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1639416633 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\veriyapilariodev_4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"StackADT.h"
+
+1639333701 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\veriyapilariodev_4\stackadt.h
+	<stdbool.h>
+

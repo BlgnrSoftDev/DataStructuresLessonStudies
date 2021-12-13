@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1639410389 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\evaluationofpostfix\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"StackADT.h"
+	<string.h>
+
+1639333701 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\evaluationofpostfix\stackadt.h
+	<stdbool.h>
+

@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1638424625 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\linkedlistwithdummynode_v7\main.c
+	<stdio.h>
+	<stdlib.h>
+	"ListADT.h"
+
+1638425000 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\linkedlistwithdummynode_v7\listadt.h
+	<stdbool.h>
+

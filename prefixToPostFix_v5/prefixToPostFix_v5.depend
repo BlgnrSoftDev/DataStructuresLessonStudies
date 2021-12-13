@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1637002567 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\prefixtopostfix_v5\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1639074782 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\stackwitharray_v7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	"StackADT.h"
+
+1639074631 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\stackwitharray_v7\stackadt.h
+	<stdbool.h>
+

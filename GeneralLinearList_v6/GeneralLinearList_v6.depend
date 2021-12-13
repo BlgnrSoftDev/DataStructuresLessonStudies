@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1639063863 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\generallinearlist_v6\main.c
+	<stdio.h>
+	<stdlib.h>
+	<C:\Users\BlgnrCENG\Desktop\Dosyalarim\C_lang\DataStructuresSeries\GeneralLinearList_v6\ListHeader.h>
+	<stdbool.h>
+
