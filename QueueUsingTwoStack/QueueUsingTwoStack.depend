@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1639871676 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\queueusingtwostack\main.c
+	<stdio.h>
+	<stdlib.h>
+	"QueueADT.h"
+	"StackADT.h"
+
+1639871820 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\queueusingtwostack\queueadt.h
+	"StackADT.h"
+	<stdbool.h>
+
+1639870665 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\queueusingtwostack\stackadt.h
+	<stdbool.h>
+

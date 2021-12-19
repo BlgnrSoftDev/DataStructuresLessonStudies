@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1639858159 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\queuewitharray\main.c
+	<stdio.h>
+	<stdlib.h>
+	"QueueADT.h"
+
+1639858705 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\queuewitharray\queueadt.h
+	<stdbool.h>
+

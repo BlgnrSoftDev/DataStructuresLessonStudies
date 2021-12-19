@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1639938328 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\queuesimulationprogram\main.c
+	<stdio.h>
+	<stdlib.h>
+	"QueueADT.h"
+	<stdbool.h>
+	<time.h>
+
+1639748345 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\queuesimulationprogram\queueadt.h
+	<stdbool.h>
+

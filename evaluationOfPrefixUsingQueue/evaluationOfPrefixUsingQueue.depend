@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1639828410 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\evaluationofprefixusingqueue\main.c
+	<stdio.h>
+	<stdlib.h>
+	"QueueADT.h"
+	<stdbool.h>
+	<string.h>
+
+1639824363 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\evaluationofprefixusingqueue\queueadt.h
+	<stdbool.h>
+

@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1639726094 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\eightqueens\main.c
+	<stdio.h>
+	<stdlib.h>
+	"stackADT.h"
+	<stdbool.h>
+
+1639726201 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\eightqueens\stackadt.h
+	<stdbool.h>
+
