@@ -47,7 +47,7 @@ int main()
         if( clock < 720 )
             newCustomer(line, clock);
 //        to see queue status uncomment line 41.
-//        printQueue(line);
+        printQueue(line);
         serverFree(line, &currCustomer, clock);
         serviceDone(line, &currCustomer, clock, simulator);
         simulator->maxQueueSize = (line->count > simulator->maxQueueSize)? line->count: simulator->maxQueueSize;
