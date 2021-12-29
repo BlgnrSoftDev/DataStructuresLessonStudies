@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1640808599 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\constructingexpressiontree\main.c
+	<stdio.h>
+	<stdlib.h>
+	<stdbool.h>
+	<string.h>
+	"StackADT.h"
+
+1639079477 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\constructingexpressiontree\stackadt.h
+	<stdbool.h>
+
