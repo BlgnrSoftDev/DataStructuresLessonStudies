@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1641483474 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\binarysearchtree\main.c
+	<stdio.h>
+	<stdlib.h>
+	"BSTADT.h"
+	<stdbool.h>
+
+1641483536 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\binarysearchtree\bstadt.h
+	<stdbool.h>
+
