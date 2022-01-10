@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1641816332 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\avl_tree\main.c
+	<stdio.h>
+	<stdlib.h>
+	"AV_Tree_ADT.h"
+
+1641817909 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\avl_tree\av_tree_adt.h
+	<stdbool.h>
+

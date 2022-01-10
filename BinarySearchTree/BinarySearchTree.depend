@@ -1,10 +1,14 @@
 # depslib dependency file v1.0
-1641483474 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\binarysearchtree\main.c
+1641489911 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\binarysearchtree\main.c
 	<stdio.h>
 	<stdlib.h>
 	"BSTADT.h"
 	<stdbool.h>
+	"StackADT.h"
 
-1641483536 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\binarysearchtree\bstadt.h
+1641487831 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\binarysearchtree\bstadt.h
+	<stdbool.h>
+
+1641488011 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\binarysearchtree\stackadt.h
 	<stdbool.h>
 
