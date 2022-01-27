@@ -18,6 +18,18 @@ int main()
     insert_BST(newTree, &c);
     traverse_BST(newTree, process);
     printf("\n");
+
+    insert_BST(newTree, &b);
+    traverse_BST(newTree, process);
+    printf("\n");
+
+    insert_BST(newTree, &a);
+    traverse_BST(newTree, process);
+    printf("\n");
+
+    insert_BST(newTree, &d);
+    traverse_BST(newTree, process);
+    printf("\n");
 //    insert_BST(newTree, &d);
 //    traverse_BST(newTree, process);
 //    printf("\n");

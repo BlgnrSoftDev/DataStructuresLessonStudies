@@ -2,14 +2,79 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="AV_Tree_ADT.h" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="AV_Tree_ADT.h" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="8315" topLine="417" />
+			<Cursor1 position="6047" topLine="78" />
 		</Cursor>
+		<Folding>
+			<Collapse line="51" />
+			<Collapse line="54" />
+			<Collapse line="66" />
+			<Collapse line="69" />
+			<Collapse line="80" />
+			<Collapse line="95" />
+			<Collapse line="97" />
+			<Collapse line="104" />
+			<Collapse line="107" />
+			<Collapse line="109" />
+			<Collapse line="125" />
+			<Collapse line="128" />
+			<Collapse line="131" />
+			<Collapse line="152" />
+			<Collapse line="156" />
+			<Collapse line="162" />
+			<Collapse line="166" />
+			<Collapse line="169" />
+			<Collapse line="197" />
+			<Collapse line="202" />
+			<Collapse line="208" />
+			<Collapse line="212" />
+			<Collapse line="215" />
+			<Collapse line="242" />
+			<Collapse line="250" />
+			<Collapse line="258" />
+			<Collapse line="266" />
+			<Collapse line="272" />
+			<Collapse line="278" />
+			<Collapse line="280" />
+			<Collapse line="287" />
+			<Collapse line="293" />
+			<Collapse line="299" />
+			<Collapse line="302" />
+			<Collapse line="310" />
+			<Collapse line="318" />
+			<Collapse line="322" />
+			<Collapse line="341" />
+			<Collapse line="345" />
+			<Collapse line="356" />
+			<Collapse line="359" />
+			<Collapse line="380" />
+			<Collapse line="382" />
+			<Collapse line="403" />
+			<Collapse line="409" />
+			<Collapse line="421" />
+			<Collapse line="425" />
+			<Collapse line="446" />
+			<Collapse line="449" />
+			<Collapse line="470" />
+			<Collapse line="476" />
+			<Collapse line="478" />
+			<Collapse line="489" />
+			<Collapse line="499" />
+			<Collapse line="501" />
+			<Collapse line="507" />
+			<Collapse line="511" />
+			<Collapse line="515" />
+			<Collapse line="523" />
+			<Collapse line="530" />
+			<Collapse line="538" />
+			<Collapse line="550" />
+			<Collapse line="562" />
+		</Folding>
 	</File>
-	<File name="main.c" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1176" topLine="0" />
+			<Cursor1 position="908" topLine="0" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
