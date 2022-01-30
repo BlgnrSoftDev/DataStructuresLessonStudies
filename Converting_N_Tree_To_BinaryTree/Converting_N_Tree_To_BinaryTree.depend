@@ -1,0 +1,9 @@
+# depslib dependency file v1.0
+1643555718 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\converting_n_tree_to_binarytree\main.c
+	<stdio.h>
+	<stdlib.h>
+	"QueueADT.h"
+
+1639748345 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\converting_n_tree_to_binarytree\queueadt.h
+	<stdbool.h>
+
