@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1643536963 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\huffmantree\main.c
+	<stdio.h>
+	<stdlib.h>
+	"UnorderedLinkedList.h"
+	<stdbool.h>
+
+1643492334 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\huffmantree\unorderedlinkedlist.h
+	<stdbool.h>
+

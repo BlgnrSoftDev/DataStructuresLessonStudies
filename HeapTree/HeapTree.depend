@@ -1,9 +1,9 @@
 # depslib dependency file v1.0
-1643245384 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\heaptree\main.c
+1643460996 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\heaptree\main.c
 	<stdio.h>
 	<stdlib.h>
 	"HeapTreeADT.h"
 
-1643245251 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\heaptree\heaptreeadt.h
+1643460996 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\heaptree\heaptreeadt.h
 	<stdbool.h>
 

@@ -10,18 +10,30 @@ int main()
     void* dataPtr;
     HEAP* heap = heapCreate(10, compare);
 
-    heapInsert(heap, &e);
     heapInsert(heap, &a);
-    heapInsert(heap, &c);
+    heapInsert(heap, &e);
+    heapInsert(heap, &b);
     heapInsert(heap, &f);
     heapInsert(heap, &d);
     heapInsert(heap, &g);
-    heapInsert(heap, &b);
+    heapInsert(heap, &c);
 
     int size = heap->size;
+
+    void** array= (void**)malloc(sizeof(void*) * 10);
+    array[0]= &e;
+    array[1]= &b;
+    array[2]= &a;
+    array[3]= &d;
+    array[4]= &c;
+    array[5]= &g;
+    array[6]= &f;
+
+    HEAP* nnmx = buildHeap(array, 7, compare);
+
     for(int i = 0; i < size; ++i)
     {
-        heapDelete(heap, &dataPtr);
+        heapDelete(nnmx, &dataPtr);
         printf("%d, ", *((int*)dataPtr));
     }
 

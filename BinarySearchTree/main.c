@@ -16,67 +16,36 @@ int main()
     BST_TREE* newTree = create_BST(compare);
 
     insert_BST(newTree, &c);
-    traverse_BST(newTree, process);
-    printf("\n");
-
-    insert_BST(newTree, &b);
-    traverse_BST(newTree, process);
-    printf("\n");
-
     insert_BST(newTree, &a);
-    traverse_BST(newTree, process);
-    printf("\n");
-
+    insert_BST(newTree, &b);
     insert_BST(newTree, &d);
-    traverse_BST(newTree, process);
-    printf("\n");
-//    insert_BST(newTree, &d);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//    insert_BST(newTree, &g);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//    insert_BST(newTree, &a);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//    insert_BST(newTree, &e);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//
-//    insert_BST(newTree, &b);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//
-//    insert_BST(newTree, &f);
-//    traverse_BST(newTree, process);
-//    printf("\n");
 
-//    delete_BST(newTree, &a);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//
-//    delete_BST(newTree, &e);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//
-//    delete_BST(newTree, &g);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//
-//    delete_BST(newTree, &d);
-//    traverse_BST(newTree, process);
-//    printf("\n");
-//
-//    delete_BST(newTree, &c);
-//    traverse_BST(newTree, process);
-//    printf("\n");
 
     STACK* st = createStack();
-    printTree(newTree, st);
+    pushStack(st, newTree->root);
 
-    printf("\n\n");
+    NODE* tmp;
+    while(st->count != 0)
+    {
+        tmp = popStack(st);
+        if(tmp != NULL)
+        {
+            pushStack(st, tmp->rightSubTree);
+            pushStack(st, tmp);
+            pushStack(st, tmp->leftSubTree);
+        }
+        else
+        {
+            if(st->count != 0)
+            {
+                tmp = popStack(st);
+                printf("%d ", *((int*)tmp->data));
+            }
+        }
 
-    printTree_V2(newTree);
+
+    }
+
 
     return 0;
 }

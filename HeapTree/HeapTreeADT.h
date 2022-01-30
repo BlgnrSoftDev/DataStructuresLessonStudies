@@ -21,8 +21,10 @@ bool heapInsert(HEAP* heap, void* dataPtr);
 bool heapDelete(HEAP* heap, void** dataOutPtr);
 int heapCount(HEAP* heap);
 bool heapFull(HEAP* heap);
+void printKth(HEAP* heap, int k);
 bool heapEmpty(HEAP* heap);
 void heapDestroy(HEAP* heap);
+
 
 static void _reheapUp(HEAP* heap, int childLoc);
 static void _reheapDown(HEAP* heap, int root);
@@ -162,4 +164,52 @@ void heapDestroy(HEAP* heap)
         free(heap);
     }
 }
+
+
+void printKth(HEAP* heap, int k)
+{
+
+    if(k > heap->size)
+        return NULL;
+
+    void* temp;
+    for(int i = 0; i < k; ++i)
+    {
+        heapDelete(heap, &temp);
+        heap->heapArr[heap->size] = temp;
+    }
+
+    printf("element is %d\n", *((int*)temp));
+
+    int x = 0;
+    while(x < 3)
+    {
+        heap->last++;
+        heap->size++;
+        _reheapUp(heap, heap->last);
+
+        ++x;
+    }
+}
+
+
+HEAP* buildHeap(void** heapArr, int size, int (*compare)(void*, void*))
+{
+    int n = size/2 - 1;
+
+    HEAP* newHeap = heapCreate(size * 20, compare);
+    newHeap->last = size-1;
+    newHeap->heapArr = heapArr;
+    newHeap->size = size;
+
+    while(n >= 0)
+    {
+        _reheapDown(newHeap, n);
+        n--;
+    }
+
+
+    return newHeap;
+}
+
 
