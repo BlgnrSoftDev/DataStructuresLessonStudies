@@ -14,33 +14,34 @@ int main()
     BTree_Insert(newTree, &c);
     BTree_Insert(newTree, &d);
     BTree_Insert(newTree, &e);
-    BTree_Insert(newTree, &f);
     BTree_Insert(newTree, &g);
+    BTree_Insert(newTree, &f);
 
-
-    BTree_Delete(newTree, &g);
+    BTree_Delete(newTree, &f);
     BTree_Traverse(newTree, process);
     printf("\n");
+//    printf("\n%d", *((int*)newTree->root->entries[0].rightPtr->entries[1].dataPtr));
+//    printf("\n%d\n", newTree->root->numEntries);
     BTree_Delete(newTree, &c);
-    BTree_Traverse(newTree, process);
-    printf("\n");
-    BTree_Delete(newTree, &b);
-    BTree_Traverse(newTree, process);
-    printf("\n");
-    BTree_Delete(newTree, &d);
     BTree_Traverse(newTree, process);
     printf("\n");
     BTree_Delete(newTree, &e);
     BTree_Traverse(newTree, process);
     printf("\n");
-    BTree_Delete(newTree, &f);
+    BTree_Delete(newTree, &d);
+    BTree_Traverse(newTree, process);
+    printf("\n");
+    BTree_Delete(newTree, &b);
+    BTree_Traverse(newTree, process);
+    printf("\n");
+    BTree_Delete(newTree, &g);
     BTree_Traverse(newTree, process);
     printf("\n");
     BTree_Delete(newTree, &a);
     BTree_Traverse(newTree, process);
-    printf("\n");
-//    printf("\n%d", *((int*)newTree->root->firstPtr->entries[0].dataPtr));
-//    printf("\n%d", newTree->root->firstPtr->numEntries);
+    printf("-->");
+
+
 
     return 0;
 }

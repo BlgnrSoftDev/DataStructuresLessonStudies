@@ -37,13 +37,10 @@ typedef struct BTree
 
 BTREE* BTree_Create(int (*compare) (void* arg1, void* arg2));
 void BTree_Traverse(BTREE* tree, void (*process) (void*, void*));
-BTREE* BTree_Destroy(BTREE* tree);
 void BTree_Insert(BTREE* tree, void* dataInPtr);
 bool BTree_Delete(BTREE* tree, void* dltKey);
 void* BTree_Search(BTREE* tree, void* dataPtr);
-bool BTree_Empty(BTREE* tree);
-bool BTree_Full(BTREE* tree);
-int BTree_Count(BTREE* tree);
+
 
 
 static void* _search(BTREE* tree, void* targetPtr, NODE* root);
@@ -59,7 +56,6 @@ static bool _reFlow(NODE* root, int entryNdx);
 static void _borrowLeft(NODE* root, int entryNdx, NODE* leftTree, NODE* rightTree);
 static void _borrowRight(NODE* root, int entryNdx, NODE* leftTree, NODE* rightTree);
 static void _combine(NODE* root, int entryNdx, NODE* leftTree, NODE* rightTree);
-static void _destroy(NODE* root);
 
 
 
@@ -351,18 +347,24 @@ static int _searchNodeForDelete(BTREE* tree, NODE* nodePtr, void* target)
     while(walker < nodePtr->numEntries)
     {
         if(tree->compare(target, nodePtr->entries[walker].dataPtr) == 0)
-        {
             return walker;
-        }
-        else if(tree->compare(target, nodePtr->entries[walker].dataPtr) < 0)
+
+        if(tree->compare(target, nodePtr->entries[walker].dataPtr) < 0)
         {
-            return walker;
+            if(walker == 0)
+                return 0;
+            else if(walker > 0)
+            {
+                return walker - 1;
+            }
+
         }
+
         walker++;
     }
 
-    --walker;
-    return walker;
+
+    return walker - 1;
 }
 
 bool BTree_Delete(BTREE* tree, void* dltKey)
@@ -383,16 +385,9 @@ bool BTree_Delete(BTREE* tree, void* dltKey)
         (tree->count)--;
         if(tree->root->numEntries == 0)
         {
-            if(tree->root->firstPtr == NULL)
-            {
-                tree->root = NULL;
-            }
-            else
-            {
                 dltPtr = tree->root;
                 tree->root = tree->root->firstPtr;
                 free(dltPtr);
-            }
         }
     }
     return success;
@@ -417,6 +412,7 @@ static bool _delete(BTREE* tree, NODE* root, void* dltKeyPtr, bool* success)
     entryNdx = _searchNodeForDelete(tree, root, dltKeyPtr);
     if(tree->compare(dltKeyPtr, root->entries[entryNdx].dataPtr) == 0)
     {
+
         *success = true;
         if(root->entries[entryNdx].rightPtr == NULL)
         {
@@ -438,8 +434,10 @@ static bool _delete(BTREE* tree, NODE* root, void* dltKeyPtr, bool* success)
     }
     else
     {
+
         if(tree->compare(dltKeyPtr, root->entries[0].dataPtr) < 0)
         {
+//            printf("buradaa");
             subTreePtr = root->firstPtr;
         }
         else
