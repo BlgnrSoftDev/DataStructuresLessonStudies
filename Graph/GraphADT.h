@@ -1,8 +1,3 @@
-#ifndef GRAPHADT_H_INCLUDED
-#define GRAPHADT_H_INCLUDED
-
-#endif // GRAPHADT_H_INCLUDED
-
 #include "StackADT.h"
 #include "QueueADT.h"
 #include <stdbool.h>
@@ -19,6 +14,7 @@ typedef struct vertex
 {
     int indegree, outdegree;
     bool isProcessed;
+    bool inTree;
     struct vertex* nextVertex;
     void* dataPtr;
     struct arc* pArc;
@@ -28,19 +24,21 @@ typedef struct arc
 {
     struct vertex* destination;
     struct arc* nextArc;
+    int weight;
 }ARC;
 
 
 GRAPH* createGraph(int (*compare) (void* ,void*));
-GRAPH* destroyGraph(GRAPH* graph);
 void graphInsertVertex(GRAPH* graph, void* dataInPtr);
 int graphDeleteVertex(GRAPH* graph, void* deleteKey);
-int graphInsertArc(GRAPH* graph, void* pFromKey, void* pToKey);
+int graphInsertArc(GRAPH* graph, void* pFromKey, void* pToKey, int weight);
 int graphDeleteArc(GRAPH* graph, void* pFromKey, void* pToKey);
 int graphRetrieveVertex(GRAPH* graph, void* pKey, void** dataOutPtr);
+
 int graphFirstArc(GRAPH* graph, void*key, void** pDataOut);
 int graphDFS(GRAPH* graph, void (*process) (void* dataPtr), void* keyPtr);
 int graphBFS(GRAPH* graph, void (*process) (void* dataPtr), void* keyPtr);
+void primSpanningTree(GRAPH* graph, void* keyPtr);
 
 
 bool graphEmpty(GRAPH* graph);
@@ -72,18 +70,20 @@ VERTEX* createNewVertex(void* data)
         newVertex->isProcessed = false;
         newVertex->nextVertex = NULL;
         newVertex->pArc = NULL;
+        newVertex->inTree = false;
     }
 
     return newVertex;
 }
 
-ARC* createNewArc(VERTEX* dest)
+ARC* createNewArc(VERTEX* dest, int weight)
 {
     ARC* newArc = (ARC*)malloc(sizeof(ARC));
     if( newArc )
     {
         newArc->destination = dest;
         newArc->nextArc = NULL;
+        newArc->weight = weight;
     }
 
     return newArc;
@@ -172,7 +172,7 @@ int graphDeleteVertex(GRAPH* graph, void* deleteKey)
 
 }
 
-int graphInsertArc(GRAPH* graph, void* pFromKey, void* pToKey)
+int graphInsertArc(GRAPH* graph, void* pFromKey, void* pToKey, int weight)
 {
     VERTEX* fromVertex;
     VERTEX* toVertex;
@@ -216,7 +216,7 @@ int graphInsertArc(GRAPH* graph, void* pFromKey, void* pToKey)
     (fromVertex->outdegree)++;
 
 
-    ARC* newArc = createNewArc(toVertex);
+    ARC* newArc = createNewArc(toVertex, weight);
     ARC* pLocArc, *pPreArc;
 
     pLocArc = fromVertex->pArc;
@@ -420,4 +420,132 @@ int graphBFS(GRAPH* graph, void (*process) (void* dataPtr), void* keyPtr)
 
 }
 
+int graphFirstArc(GRAPH* graph, void*key, void** pDataOut)
+{
+    if( !graph )
+    {
+        return -1;
+    }
 
+
+    VERTEX* walker  = graph->first;
+
+    if(!walker)
+    {
+        *pDataOut = NULL;
+        return 0;
+    }
+
+    while( walker )
+    {
+        if( graph->compare(walker->dataPtr, key) == 0)
+        {
+            *pDataOut  = (void*)walker->pArc;
+            break;
+        }
+
+        walker = walker->nextVertex;
+    }
+
+
+
+    return 1;
+}
+
+bool graphEmpty(GRAPH* graph)
+{
+    return (graph == NULL) || (graph->count == 0);
+}
+bool graphFull(GRAPH* graph)
+{
+    VERTEX* vertex = createNewVertex(NULL);
+    if(vertex)
+        return true;
+
+    return false;
+}
+int graphCount(GRAPH* graph)
+{
+    return graph->count;
+}
+
+void primSpanningTree(GRAPH* graph, void* keyPtr)
+{
+    if(!graph || !graph->first)
+        return -1;
+
+
+    VERTEX* startVertex = graph->first;
+    while(startVertex && graph->compare(startVertex->dataPtr, keyPtr) < 0)
+    {
+        startVertex = startVertex->nextVertex;
+    }
+
+    if(!startVertex || graph->compare(startVertex->dataPtr, keyPtr) != 0)
+    {
+        return -2;
+    }
+
+
+    VERTEX* walker = graph->first;
+    while( walker)
+    {
+        walker->inTree = false;
+        walker = walker->nextVertex;
+    }
+
+
+    VERTEX** path = (VERTEX**)malloc(sizeof(VERTEX)* graph->count);
+    path[0] = startVertex;
+    startVertex->inTree = true;
+    int len = 1, x = 0;
+    ARC* MAX = createNewArc(NULL, 99999);
+    ARC* minArcRef = MAX;
+    VERTEX* minArcFrom = NULL;
+    int i;
+    for(i = 0; i <  len; ++i)
+    {
+        if(path[i]->inTree)
+        {
+            ARC* temp = path[i]->pArc;
+            while( temp )
+            {
+
+                if(!temp->destination->inTree)
+                {
+
+                    if(minArcRef->weight > temp->weight)
+                    {
+                        minArcRef = temp;
+                        minArcFrom = path[i];
+
+                    }
+                }
+                temp = temp->nextArc;
+            }
+
+            if(x == i)
+            {
+                if(minArcRef == MAX)
+                {
+                    break;
+                }
+                x++;
+                len++;
+                i = -1;
+                minArcRef->destination->inTree = true;
+                path[x] = minArcRef->destination;
+                printf("%d ---> %d\n", *((int*)minArcFrom->dataPtr), *((int*)minArcRef->destination->dataPtr)) ;
+                minArcRef = MAX;
+                if(x == graph->count)
+                    break;
+            }
+
+        }
+    }
+
+
+
+
+
+}

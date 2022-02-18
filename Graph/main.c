@@ -17,19 +17,17 @@ int main()
     graphInsertVertex(newGraph, &e);
     graphInsertVertex(newGraph, &f);
 
-    graphInsertArc(newGraph, &a, &b);
-    graphInsertArc(newGraph, &a, &c);
-    graphInsertArc(newGraph, &b, &c);
-    graphInsertArc(newGraph, &b, &e);
-    graphInsertArc(newGraph, &c, &d);
-    graphInsertArc(newGraph, &c, &f);
-    graphInsertArc(newGraph, &f, &d);
+    graphInsertArc(newGraph, &a, &b, 5);
+    graphInsertArc(newGraph, &a, &c, 7);
+    graphInsertArc(newGraph, &b, &c, 9);
+    graphInsertArc(newGraph, &b, &e, 10);
+    graphInsertArc(newGraph, &c, &d, 3);
+    graphInsertArc(newGraph, &c, &f, 1);
+    graphInsertArc(newGraph, &f, &d, 2);
 
-    graphDeleteArc(newGraph, &c, &d);
-    graphDeleteArc(newGraph, &c, &f);
-    graphDeleteArc(newGraph, &b, &e);
-
-    graphBFS(newGraph, process, &a);
+//    printf("%d", newGraph->count);
+    primSpanningTree(newGraph, &a);
+//    graphBFS(newGraph, process, &a);
 
 
 

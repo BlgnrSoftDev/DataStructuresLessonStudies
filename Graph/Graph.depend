@@ -1,10 +1,10 @@
 # depslib dependency file v1.0
-1645043387 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\graph\main.c
+1645202788 source:c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\graph\main.c
 	<stdio.h>
 	<stdlib.h>
 	"GraphADT.h"
 
-1645046974 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\graph\graphadt.h
+1645203575 c:\users\blgnrceng\desktop\dosyalarim\c_lang\datastructuresseries\graph\graphadt.h
 	"StackADT.h"
 	"QueueADT.h"
 	<stdbool.h>
